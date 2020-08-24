@@ -27,6 +27,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 mongoose.connect("mongodb+srv://admin-shot:Mongoose_10@cluster0.okt5a.mongodb.net/secretsDB", { useNewUrlParser: true, useUnifiedTopology: true});
+// mongoose.connect("mongodb://localhost:27017/userDB", {useNewUrlParser: true});
 mongoose.set("useCreateIndex", true);
 const userSchema = new mongoose.Schema({
   email: String,
@@ -164,7 +165,7 @@ app.post("/login", function(req, res){
 
 let port = process.env.PORT;
 if (port == null || port == "") {
-  port = 8000;
+  port = 3000;
 }
 
 app.listen(port, function() {
